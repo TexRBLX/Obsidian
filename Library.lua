@@ -98,19 +98,20 @@ local ObsidianImageManager = {
     Assets = {
         TransparencyTexture = {
             RobloxId = 139785960036434,
-            Path = "Obsidian/assets/TransparencyTexture.png",
+            Path = "",
 
-            Id = nil
+            Id = "rbxassetid://139785960036434"
         },
         
         SaturationMap = {
             RobloxId = 4155801252,
-            Path = "Obsidian/assets/SaturationMap.png",
+            Path = "",
 
-            Id = nil
+            Id = "rbxassetid://4155801252"
         }
     }
 }
+
 do
     local BaseURL = "https://raw.githubusercontent.com/NightForRoblox/Obsidian/refs/heads/main/"
 
