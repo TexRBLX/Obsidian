@@ -139,41 +139,32 @@ do
         if not ObsidianImageManager.Assets[AssetName] then
             return nil
         end
-
+    
         local AssetData = ObsidianImageManager.Assets[AssetName]
         if AssetData.Id then
             return AssetData.Id
         end
-
+    
         local AssetID = `rbxassetid://{AssetData.RobloxId}`
-
-        if getcustomasset then
-            local Success, NewID = pcall(getcustomasset, AssetData.Path)
-
-            if Success and NewID then
-                AssetID = NewID
-            end
-        end
-
         AssetData.Id = AssetID
         return AssetID
     end
 
     function ObsidianImageManager.DownloadAsset(AssetPath: string)
-        if not getcustomasset or not writefile or not isfile then
+        if not writefile or not isfile then
             return
         end
-
+    
         RecursiveCreatePath(AssetPath, true)
-
+    
         if isfile(AssetPath) then
             return
         end
-
+    
         local URLPath = AssetPath:gsub("Obsidian/", "")
         writefile(AssetPath, game:HttpGet(`{BaseURL}{URLPath}`))
     end
-
+    
     for _, Data in ObsidianImageManager.Assets do
         ObsidianImageManager.DownloadAsset(Data.Path)
     end
