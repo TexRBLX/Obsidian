@@ -485,7 +485,7 @@ local SaveManager = {} do
 
         self.AutoloadLabel = section:AddLabel("Current autoload config: " .. self:GetAutoloadConfig(), true)
 
-        -- self:LoadAutoloadConfig()
+        self:LoadAutoloadConfig() -- bro why was this commented out LMAO
         self:SetIgnoreIndexes({ "SaveManager_ConfigList", "SaveManager_ConfigName" })
     end
 
